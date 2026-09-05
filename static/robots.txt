@@ -1,0 +1,7 @@
+# Wash UI documentation
+User-agent: *
+Allow: /
+
+Disallow: /api/
+
+Sitemap: https://wash-ui.menzies.design/sitemap.xml
