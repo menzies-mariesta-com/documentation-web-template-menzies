@@ -1,9 +1,9 @@
 import { env } from '$env/dynamic/public';
+import { WASH_UI_VERSION } from '@menzies-mariesta-com/menzies-design-wash-ui/core';
 
-export const SITE_NAME = 'Wash UI';
-export const SITE_TAGLINE = 'Menzies Design documentation';
-export const DEFAULT_DESCRIPTION =
-	'Official documentation for Menzies Design Wash UI: pigments, themes, core APIs, and framework guides.';
+export const SITE_NAME = 'Documentation';
+export const SITE_TAGLINE = `Wash UI v${WASH_UI_VERSION}`;
+export const DEFAULT_DESCRIPTION = `Documentation for product teams, built with Menzies Design Wash UI v${WASH_UI_VERSION}: pigments, themes, core APIs, and a ready docs shell.`;
 
 /** Absolute site origin. Override with PUBLIC_SITE_URL at build/runtime. */
 export function siteOrigin(url?: URL): string {

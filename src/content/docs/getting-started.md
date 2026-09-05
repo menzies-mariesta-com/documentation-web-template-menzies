@@ -7,7 +7,7 @@ order: 1
 
 # Getting started
 
-**Menzies Design Wash UI** is a framework-free design system: pigment themes, daisyUI-based utilities, and DOM helpers. Optional React adapters exist for components and charts. This documentation site uses the **core** path that works in Svelte, Vue, vanilla, and more.
+**Menzies Design Wash UI** is a framework-free design system: pigment themes, daisyUI-based utilities, and DOM helpers. Optional React adapters exist for components and charts. This **Documentation** site uses the **core** path (Wash UI from the package) that works in Svelte, Vue, vanilla, and more.
 
 ## Install from GitHub Packages
 

@@ -7,7 +7,7 @@ order: 2
 
 # SvelteKit
 
-This documentation site is a living SvelteKit example of Wash UI **core**: stylesheet plus `initWash`, no React peers required.
+This **Documentation** site is a living SvelteKit example of Wash UI **core**: stylesheet plus `initWash`, no React peers required.
 
 ## 1. Create a project
 

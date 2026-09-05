@@ -26,10 +26,15 @@ export function observeActiveHeading(
 		(entries) => {
 			const visible = entries
 				.filter((e) => e.isIntersecting)
-				.sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+				.sort((a, b) => {
+					const ratio = b.intersectionRatio - a.intersectionRatio;
+					if (Math.abs(ratio) > 0.02) return ratio;
+					return a.boundingClientRect.top - b.boundingClientRect.top;
+				});
 			if (visible[0]?.target.id) onChange(visible[0].target.id);
 		},
-		{ rootMargin: '-20% 0px -55% 0px', threshold: [0, 0.25, 0.5, 0.75, 1] }
+		/* Bias toward the heading near the top under the sticky chrome. */
+		{ rootMargin: '-12% 0px -68% 0px', threshold: [0, 0.1, 0.25, 0.5, 1] }
 	);
 
 	for (const h of headings) observer.observe(h);

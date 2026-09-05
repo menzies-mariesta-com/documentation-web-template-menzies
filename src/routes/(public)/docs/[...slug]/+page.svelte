@@ -16,6 +16,18 @@
 	let articleEl = $state<HTMLElement | null>(null);
 	let tocItems = $state<TocItem[]>([]);
 	let activeId = $state<string | null>(null);
+	/** While set, scroll-spy must not overwrite a TOC click selection. */
+	let pinnedId = $state<string | null>(null);
+	let pinTimer: ReturnType<typeof setTimeout> | undefined;
+
+	function selectTocHeading(id: string) {
+		activeId = id;
+		pinnedId = id;
+		if (pinTimer) clearTimeout(pinTimer);
+		pinTimer = setTimeout(() => {
+			pinnedId = null;
+		}, 900);
+	}
 
 	$effect(() => {
 		data.slug;
@@ -26,7 +38,10 @@
 
 	$effect(() => {
 		data.slug;
+		pinnedId = null;
+		if (pinTimer) clearTimeout(pinTimer);
 		return observeActiveHeading(articleEl, (id) => {
+			if (pinnedId) return;
 			activeId = id;
 		});
 	});
@@ -82,7 +97,9 @@
 		<DocsPrevNext prev={data.prev} next={data.next} />
 	</div>
 
-	<aside class="sticky top-16 hidden h-[calc(100dvh-4rem)] w-52 shrink-0 overflow-y-auto scroll-smooth py-8 pe-6 xl:block">
-		<DocsToc items={tocItems} {activeId} />
+	<aside
+		class="sticky top-16 hidden h-[calc(100dvh-4rem)] w-56 shrink-0 overflow-y-auto scroll-smooth pt-3 pb-6 pe-5 xl:block"
+	>
+		<DocsToc items={tocItems} {activeId} onSelect={selectTocHeading} />
 	</aside>
 </div>

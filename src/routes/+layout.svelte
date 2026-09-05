@@ -11,6 +11,7 @@
 	import '@menzies-mariesta-com/menzies-design-wash-ui/styles.css';
 	import { setWashRuntime } from '$lib/store/state/wash.svelte';
 	import favicon from '$lib/assets/favicon.svg';
+	import appIcon from '$lib/assets/app-icon.svg';
 	import './layout.css';
 
 	let { children } = $props();
@@ -29,7 +30,8 @@
 </script>
 
 <svelte:head>
-	<link rel="icon" href={favicon} />
+	<link rel="icon" href={favicon} type="image/svg+xml" />
+	<link rel="apple-touch-icon" href={appIcon} />
 </svelte:head>
 
 <div class="page-wash paper-grain min-h-dvh">

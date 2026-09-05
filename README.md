@@ -1,38 +1,84 @@
-# Documentation Web Template · Menzies
+# Documentation
 
-Ship a polished **Wash UI** documentation site in minutes: marketing home, Get started flow, Cmd+K search, pigment themes, and Markdown docs on SvelteKit.
+A ready-to-ship **Documentation** site template powered by [Menzies Design Wash UI](https://design-menzies.netlify.app/): marketing home, Markdown docs, Cmd+K search, pigment themes, and Netlify deploy. Clone it, drop in your pages, ship.
 
 <p align="center">
-  <img src="docs/assets/readme-home.png" alt="Wash UI docs home page" width="920" />
+  <img src="docs/assets/readme-home-hero.jpg" alt="Documentation home hero on a large desktop viewport" width="100%" />
 </p>
 
 <p align="center">
-  <a href="https://github.com/menzies-mariesta-com/documentation-web-template-menzies"><img alt="GitHub" src="https://img.shields.io/badge/GitHub-menzies--mariesta--com-181717?logo=github" /></a>
+  <a href="https://github.com/menzies-mariesta-com/documentation-web-template-menzies"><img alt="GitHub" src="https://img.shields.io/badge/repo-documentation--web--template--menzies-181717?logo=github" /></a>
   <img alt="SvelteKit" src="https://img.shields.io/badge/SvelteKit-2-FF3E00?logo=svelte" />
+  <img alt="Svelte" src="https://img.shields.io/badge/Svelte-5-FF3E00?logo=svelte" />
   <img alt="Wash UI" src="https://img.shields.io/badge/Wash%20UI-1.0.4-276C8E" />
   <img alt="daisyUI" src="https://img.shields.io/badge/daisyUI-5.7.9-5A0EF8?logo=daisyui" />
-  <img alt="Netlify" src="https://img.shields.io/badge/Deploy-Netlify-00C7B7?logo=netlify" />
+  <img alt="Netlify" src="https://img.shields.io/badge/Netlify-ready-00C7B7?logo=netlify" />
+</p>
+
+<p align="center">
+  <a href="#quick-start"><strong>Quick start</strong></a>
+  ·
+  <a href="#what-you-get"><strong>What you get</strong></a>
+  ·
+  <a href="#docs-shell"><strong>Docs shell</strong></a>
+  ·
+  <a href="#customize"><strong>Customize</strong></a>
 </p>
 
 ---
 
-## Why this template
+## Why clone this instead of starting from scratch?
 
-Most docs starters give you a blank Markdown tree. This one gives you a **product-ready docs experience** already themed with [Menzies Design Wash UI](https://design-menzies.netlify.app/):
+Blank SvelteKit + Markdown leaves you wiring sidebar, search, themes, SEO, and deploy yourself. This template already does that, styled with **Wash UI pigments** so your docs look like the design system they document.
 
-| You get | Details |
-|--------|---------|
-| Marketing home | Brand-first hero + **Get started** CTA into docs |
-| Docs shell | Collapsible sidebar, breadcrumbs, TOC, prev/next |
-| Command search | `Ctrl/⌘K` palette over every page |
-| Pigment themes | Light/dark + 30 Wash UI pigments |
-| Markdown pipeline | mdsvex + Shiki highlighting + copy buttons |
-| SEO baseline | Titles, OG/Twitter, sitemap, robots, JSON-LD |
-| Netlify-ready | Adapter + `netlify.toml` included |
+| Pain | This template |
+|------|----------------|
+| Docs feel like a wiki dump | Brand home → **Get started** → structured guides |
+| Search is an afterthought | `Ctrl` / `⌘` `K` over every page |
+| Theme toggle is bolted on | Light/dark + **30 Wash pigments** in the chrome |
+| Code blocks look plain | Shiki dual themes + one-click copy |
+| SEO and deploy later | Titles, OG, sitemap, robots, Netlify adapter |
+
+---
+
+## What you get
 
 <p align="center">
-  <img src="docs/assets/readme-docs.png" alt="Documentation layout with sidebar and getting started page" width="920" />
+  <img src="docs/assets/readme-home-features.jpg" alt="Home feature sections with wash illustrations on large desktop" width="100%" />
 </p>
+
+- **Marketing home** with splash motion, feature sections, and a clear path into docs
+- **Docs shell**: collapsible sidebar, breadcrumbs, TOC, prev/next
+- **On this page** TOC on large screens (`xl` and up), with active section highlight
+- **Command search** (`Ctrl` / `⌘` `K`)
+- **Theme chrome**: paper mode + pigment picker
+- **Markdown** under `src/content/docs/` (mdsvex + Shiki)
+- **SEO baseline**: meta, Open Graph / Twitter, sitemap, robots, JSON-LD
+- **Netlify-ready**: `@sveltejs/adapter-netlify` + `netlify.toml`
+
+<p align="center">
+  <img src="docs/assets/readme-home-more.jpg" alt="Home lower sections and closing CTA band" width="100%" />
+</p>
+
+---
+
+## Docs shell
+
+Captured at **1600×1000** so the full desktop layout is visible: left nav, article, and the right-hand **On this page** rail (that rail is hidden below the `xl` breakpoint).
+
+<p align="center">
+  <img src="docs/assets/readme-docs-toc.jpg" alt="Getting started docs with sidebar and On this page TOC on large screen" width="100%" />
+</p>
+
+<p align="center">
+  <img src="docs/assets/readme-docs-toc-active.jpg" alt="Docs page after selecting a TOC heading; active section highlighted" width="100%" />
+</p>
+
+<p align="center">
+  <img src="docs/assets/readme-theming-toc.jpg" alt="Theming guide with On this page TOC visible on large desktop" width="100%" />
+</p>
+
+**Responsive note:** the **On this page** column only mounts from the `xl` breakpoint upward. Narrower viewports keep the article full width; do not screenshot docs UX below `xl` if you need the TOC in the frame.
 
 ---
 
@@ -49,7 +95,7 @@ Open [http://localhost:5173](http://localhost:5173).
 
 ### Wash UI from GitHub Packages
 
-This project uses `@menzies-mariesta-com/menzies-design-wash-ui@1.0.4`. Project `.npmrc` already points the scope at GitHub Packages. Authenticate once:
+Depends on `@menzies-mariesta-com/menzies-design-wash-ui@1.0.4`. Project `.npmrc` already scopes the package to GitHub Packages. Authenticate once:
 
 ```bash
 # ~/.npmrc (or CI secret)
@@ -62,14 +108,17 @@ Token needs `read:packages` for the org.
 
 ## Stack
 
-- **SvelteKit 2** + Svelte 5 (runes)
-- **Tailwind CSS 4** + Wash UI `styles.css` (daisyUI tokens included)
-- **`initWash`** from `/core` (no React peers required)
-- **mdsvex** for docs content under `src/content/docs/`
-- **Shiki** for dual light/dark code blocks
-- **Lucide** `@lucide/svelte@1.28.0`
-- **Paraglide**, Better Auth + Drizzle scaffolds (optional; unused by public docs)
-- **`@sveltejs/adapter-netlify`**
+| Layer | Choice |
+|-------|--------|
+| App | SvelteKit 2 + Svelte 5 (runes) |
+| UI | Wash UI `styles.css` + Tailwind CSS 4 |
+| Core | `initWash` from `/core` (no React peers) |
+| Docs | mdsvex + Shiki (light/dark) |
+| Icons | `@lucide/svelte@1.28.0` |
+| Motion | GSAP + ScrollTrigger on the home page |
+| Deploy | `@sveltejs/adapter-netlify` |
+
+Optional scaffolds (Paraglide, Better Auth, Drizzle) ship with the repo but are unused by the public docs surface.
 
 ---
 
@@ -77,29 +126,28 @@ Token needs `read:packages` for the org.
 
 ```text
 src/
-  content/docs/          # Markdown pages (frontmatter: title, description, section, order)
-  lib/components/docs/   # Sidebar, search, TOC, header, theme switcher
-  lib/tool/docs/         # Nav tree, search index, highlighting helpers
+  content/docs/          # Markdown (frontmatter: title, description, section, order)
+  lib/components/docs/   # Sidebar, search, TOC, header, theme switcher, brand mark
+  lib/components/home/   # Landing sections, wash splash, feature ink
+  lib/tool/docs/         # Nav tree, search index, TOC helpers
+  lib/assets/            # favicon.svg + app-icon.svg (BookOpen on mineral wash)
   routes/(public)/
     +page.svelte         # Home
-    docs/                # Docs layout + [...slug] pages
+    docs/                # Docs layout + [...slug]
 ```
 
-Add a page: drop a `.md` file in `src/content/docs/` with frontmatter, then restart or let HMR pick it up. It appears in the sidebar automatically.
+**Add a page:** create a `.md` file in `src/content/docs/` with frontmatter. It shows up in the sidebar automatically (HMR or restart if needed).
 
 ---
 
-## Docs UX highlights
+## Customize
 
-<p align="center">
-  <img src="docs/assets/readme-theming.png" alt="Theming documentation page" width="920" />
-</p>
-
-- **Sidebar groups** with daisyUI `menu` + `details` (Getting started, Guide, Reference)
-- **`menu-wash-active`** selection matching the live Wash UI gallery
-- **Aligned chrome** on large screens: sidebar brand bar and main header share `app-chrome-bar` height
-- **Smooth scroll** for TOC anchors (respects `prefers-reduced-motion`)
-- **SEO helpers** in `src/lib/util/seo.ts`
+1. Home copy and motion: `src/lib/components/home/`
+2. Docs content: `src/content/docs/`
+3. Site URL: `PUBLIC_SITE_URL` (see `.env.example` / `netlify.toml`)
+4. Social image: `static/og-default.png`
+5. Brand mark: `src/lib/assets/favicon.svg` / `app-icon.svg`
+6. Package version: bump Wash UI when you publish a new release
 
 ---
 
@@ -108,20 +156,10 @@ Add a page: drop a `.md` file in `src/content/docs/` with frontmatter, then rest
 | Command | Purpose |
 |---------|---------|
 | `npm run dev` | Local development |
-| `npm run build` | Production build (Netlify) |
+| `npm run build` | Production build |
 | `npm run preview` | Preview the build |
 | `npm run check` | `svelte-check` |
 | `npm run test:e2e` | Playwright smoke tests |
-
----
-
-## Customize for your product
-
-1. Replace home copy in `src/routes/(public)/+page.svelte`
-2. Rewrite or add Markdown under `src/content/docs/`
-3. Set `PUBLIC_SITE_URL` (see `.env.example` / `netlify.toml`)
-4. Swap OG image at `static/og-default.png`
-5. Point package consumers at your own Wash UI version when you publish
 
 ---
 
@@ -135,4 +173,4 @@ Add a page: drop a `.md` file in `src/content/docs/` with frontmatter, then rest
 
 ## License
 
-Follow the license of your deployment target and Wash UI (`GPL-3.0-or-later` for the design system package). This template repo: use as a starting point for Menzies / MARIESTA documentation sites.
+Wash UI is `GPL-3.0-or-later`. Use this template as a starting point for Menzies / MARIESTA documentation sites; follow your deployment target’s license for published content.

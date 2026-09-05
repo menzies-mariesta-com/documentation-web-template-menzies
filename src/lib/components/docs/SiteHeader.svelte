@@ -1,5 +1,7 @@
 <script lang="ts">
 	import { Search, Menu } from '@lucide/svelte';
+	import { WASH_UI_VERSION } from '@menzies-mariesta-com/menzies-design-wash-ui/core';
+	import BrandMark from './BrandMark.svelte';
 	import ThemeSwitcher from './ThemeSwitcher.svelte';
 
 	let {
@@ -28,7 +30,7 @@
 		: 'z-40'}"
 >
 	<div class="flex w-full min-w-0 items-center justify-between gap-3">
-		<!-- Left: menu + title -->
+		<!-- Left: menu + brand -->
 		<div class="flex min-w-0 flex-row items-center gap-2 sm:gap-3">
 			{#if onMenu}
 				<button
@@ -41,21 +43,19 @@
 				</button>
 			{/if}
 
-			{#if shell}
-				<a href="/" class="flex min-w-0 flex-col leading-tight cursor-pointer">
-					<span class="font-display truncate text-xl font-semibold tracking-tight lg:text-2xl">
-						Menzies Design
+			<a href="/" class="flex min-w-0 flex-row items-center gap-2.5 cursor-pointer sm:gap-3">
+				<BrandMark size={shell ? 'md' : 'sm'} />
+				<span class="flex min-w-0 flex-col leading-tight">
+					<span
+						class="font-display truncate font-semibold tracking-tight {shell
+							? 'text-xl lg:text-2xl'
+							: 'text-lg sm:text-xl'}"
+					>
+						Documentation
 					</span>
-					<span class="label-ink hidden truncate sm:inline">Wash UI docs</span>
-				</a>
-			{:else}
-				<a href="/" class="flex min-w-0 flex-row items-baseline gap-2 cursor-pointer">
-					<span class="font-display truncate text-lg font-semibold tracking-tight sm:text-xl">
-						Wash UI
-					</span>
-					<span class="hidden truncate text-xs text-ink-muted sm:inline">Menzies Design</span>
-				</a>
-			{/if}
+					<span class="label-ink hidden truncate sm:inline">Wash UI v{WASH_UI_VERSION}</span>
+				</span>
+			</a>
 		</div>
 
 		<!-- Right: search + theme -->
